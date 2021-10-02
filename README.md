@@ -1,35 +1,24 @@
 # Interview Check (C#)
 C# project for verifying interview setup
 
-## Open in dev container
+For more information about our interview setup, please refer to the following repo:
+https://github.com/sourceallies/interviews
 
-1. Clone this repository
-2. Open the directory in VS Code
-3. Click the "Open a Remote Window" icon on the bottom-left corner of VS Code
-4. Select "Reopen in Container"
-
-A development container image will be built according to the configuration in the `.devcontainer` folder. _Nothing is installed on your host OS_. Everything can be cleaned up by deleting the development container and corresponding image.
-
-## Run project
+## The Problem
+There are two failing tests in this project. The tests can be run as follows:
 
 ```
-dotnet run
+$ dotnet test Check.Tests/Check.Tests.csproj
 ```
 
-## Deleting development container and container image
+## Acceptance Criteria
+Make the tests pass. Only update code in the `Generator` class.
 
-**Assuming you have cloned the repository into a `interview-check-csharp` directory,** you can delete the container and corresponding image by running the following command:
-
-**macOS/Linux:**
-
-```
-docker ps -a | grep 'vsc-interview-check-csharp' | awk '{print $1}' | xargs docker rm && \
-docker images | grep 'vsc-interview-check-csharp' | awk '{print $1}' | xargs docker image rm
-```
-
-**Windows PowerShell:**
+When you run the application, you should see `Hello World` printed to the console. Run the application as follows:
 
 ```
-(docker rm (docker ps -a --format '{{.ID}} {{.Image}}' | Select-String 'vsc-interview-check-csharp').ToString().Split()[0]) -and
-(docker image rm ( (docker images | Select-String 'vsc-interview-check-csharp').ToString().Split()[0]))
+$ dotnet run -p Check/Check.csproj
 ```
+
+## Future Enhancements
+Update the application so that it receives the name and greeting via command line args.
