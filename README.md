@@ -1,8 +1,8 @@
 # Interview Check (C#)
 C# project for verifying interview setup
 
-For more information about our interview setup, please refer to the following repo:
-https://github.com/sourceallies/interviews
+For more information about our interview setup, please refer to the following documentation:
+https://github.com/sourceallies/interviews/blob/main/docs/interview-environment.md
 
 ## The Problem
 There are two failing tests in this project. The tests can be run as follows:
