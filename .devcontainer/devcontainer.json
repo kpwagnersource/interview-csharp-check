@@ -1,0 +1,14 @@
+{
+    "name": "Interview Check",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "extensions": [
+        "ms-dotnettools.csharp"
+    ],
+    "containerEnv": {
+        "DOTNET_NOLOGO": "true",
+        "DOTNET_CLI_TELEMETRY_OPTOUT": "true"
+    },
+    "remoteUser": "coder"
+}
