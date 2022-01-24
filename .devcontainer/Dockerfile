@@ -12,9 +12,13 @@ RUN apt-get update \
     # Verify git, process tools, lsb-release (common in install instructions for CLIs) installed
     && apt-get -y install git openssh-client less iproute2 procps apt-transport-https gnupg2 curl lsb-release \
     #
+    # Install Live Share dependencies
+    && apt-get install -y --no-install-recommends libicu[0-9][0-9] libkrb5-3 openssl zlib1g \
+    #
     # Create a non-root user
     && groupadd --gid $USER_GID $USERNAME \
     && useradd -s /bin/bash --uid $USER_UID --gid $USER_GID -m $USERNAME \
+    #
     # Add sudo support for the non-root user
     && apt-get install -y sudo \
     && echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME\
